@@ -101,6 +101,32 @@ def refresh_list():
         open(LIST, "wb").write(raw)
         print("Nifty 500 list refreshed")
 
+NICE = [1/2, 1/3, 1/4, 1/5, 1/10, 2/3, 2/5, 2, 3, 4, 5, 10]
+
+def repair_corporate_actions(rows, members, lookback=15):
+    """Bonus/split/consolidation shows up as a one-day jump no price band allows (> ~25%)
+    landing close to a simple ratio (1:1 bonus -> x0.5, 1:5 split -> x0.2, ...). Rescale the
+    history before that day by the ratio. Idempotent: once fixed, the jump is gone."""
+    fixed = []
+    for sym in members:
+        h = rows.get(sym)
+        if not h or len(h) < 2:
+            continue
+        start = max(1, len(h) - lookback)
+        for i in range(start, len(h)):
+            prev, cur = h[i - 1][1], h[i][1]
+            if prev <= 0:
+                continue
+            f = cur / prev
+            if 0.75 <= f <= 1.4:
+                continue
+            ratio = min(NICE, key=lambda r: abs(f / r - 1))
+            if abs(f / ratio - 1) <= 0.12:
+                for j in range(i):
+                    h[j][1] = round(h[j][1] * ratio, 2)
+                fixed.append(f"{sym} x{ratio:.4f} before {h[i][0]} (raw jump {f - 1:+.1%})")
+    return fixed
+
 def main():
     now = dt.datetime.now(IST)
     store = json.load(open(CLOSES))
@@ -146,6 +172,7 @@ def main():
             else:
                 log.append(f"{day.isoformat()}: no bhavcopy (holiday or not published)")
         day += dt.timedelta(days=1)
+    adjusted += repair_corporate_actions(rows, members)
     store["updated_at"] = now.isoformat(timespec="minutes")
     json.dump(store, open(CLOSES, "w"), separators=(",", ":"))
     status.update({"last_trading_date": store["last_date"], "checked_at": store["updated_at"],
