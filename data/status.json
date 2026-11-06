@@ -1,31 +1,11 @@
 {
  "last_trading_date": "2026-11-06",
  "note": "seeded",
- "checked_at": "2026-11-06T18:59+05:30",
- "days_added": [
-  "2026-10-26",
-  "2026-10-27",
-  "2026-10-28",
-  "2026-10-29",
-  "2026-10-30",
-  "2026-11-02",
-  "2026-11-03",
-  "2026-11-04",
-  "2026-11-05",
-  "2026-11-06"
+ "checked_at": "2026-11-06T19:03+05:30",
+ "days_added": [],
+ "adjustments": [
+  "CONCORDBIO x0.5000 before 2026-11-04 (raw jump -46.6%)"
  ],
- "adjustments": [],
- "log": [
-  "2026-10-26: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-10-27: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-10-28: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-10-29: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-10-30: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-11-02: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-11-03: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-11-04: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-11-05: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']",
-  "2026-11-06: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']"
- ],
+ "log": [],
  "symbols": 555
 }
