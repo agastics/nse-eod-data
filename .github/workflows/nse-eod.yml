@@ -5,6 +5,9 @@ on:
     - cron: "32 13 * * 1-5"   # 19:02 IST
     - cron: "17 15 * * 1-5"   # 20:47 IST (retry if NSE was late)
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: [".github/workflows/**", "scripts/**"]
 
 permissions:
   contents: write
