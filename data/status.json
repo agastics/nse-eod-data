@@ -1,13 +1,9 @@
 {
  "last_trading_date": "2026-11-27",
  "note": "seeded",
- "checked_at": "2026-11-28T03:45+05:30",
- "days_added": [
-  "2026-11-27"
- ],
+ "checked_at": "2026-11-28T04:56+05:30",
+ "days_added": [],
  "adjustments": [],
- "log": [
-  "2026-11-27: 497 stocks (udiff), indices ['NIFTY50', 'NIFTY500', 'NIFTYMIDCAP150', 'NIFTYSMALLCAP250']"
- ],
+ "log": [],
  "symbols": 555
 }
